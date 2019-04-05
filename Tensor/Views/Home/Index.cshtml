@@ -1,0 +1,26 @@
+﻿<div class="container">
+    <div class="form">
+        <input type="text" name="numbers" />
+        <button onclick="bblSort($(`[name='numbers']`).val())">
+            SORT
+        </button>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="console"></div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <span class="BigFontSize">Готовые наборы данных:</span>
+                <p>5, 1, 4, 2, 8</p>
+                <p>3, 1, 5, 8, 1, 0, 4, 6, 6, 7</p>
+                <p>80, 9, 700, 40, 1, 5, 200</p>
+                <p>15, 945, 44, 346, 122, 8724, 9238, 64, 12, 5, 32163, 455, 27, 234, 213</p>
+            </div>
+            <div class="col-md-12">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
