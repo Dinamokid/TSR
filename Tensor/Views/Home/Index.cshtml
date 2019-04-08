@@ -1,25 +1,58 @@
 ﻿<div class="container">
-    <div class="form">
-        <input type="text" name="numbers" />
-        <button onclick="bblSort($(`[name='numbers']`).val())">
-            SORT
-        </button>
-    </div>
-
     <div class="row mt-3">
-        <div class="col-md-6">
-            <div class="console"></div>
+        <div class="col-md-6 textBlock">
+            <h1 class="text-center">Bubble Sort</h1>
+            <p>Привет, на этой страничке тебе удастся в оочую понаблюдать за самым распространненым алгоритмом сортировки, а именно за "пузырьковой сортировкой" (Bubble Sort)</p>
+            <p>Для этого нажми "Сгенерировать массив". Далее мир делется на ленивых и не очень, потому как появляются возможности:</p>
+            <ul>
+                <li>Можно установить (или даже не устанавливать !!1!) скорость и просто нажать на кнопку Старт (<i class="fas fa-play pl-2 pr-2"></i>)</li>
+                <li>А так же есть возможность вручную управлять процессом, нажимая на кнопку "далее" или "назад"</li>
+            </ul>
+            <p>В случае необходимости остановить воспроизвидение, предлогается воспользоваться предусмотренной кнопкой Пауза (<i class="fas fa-pause pl-2 pr-2" style="text-indent: initial"></i>)</p>
+            <p>Для тех кому мало одного раза (на один массив данных) безотлагательно рекомендую кнопку "Сбросить"</p>
         </div>
         <div class="col-md-6">
-            <div class="col-md-12">
-                <span class="BigFontSize">Готовые наборы данных:</span>
-                <p>5, 1, 4, 2, 8</p>
-                <p>3, 1, 5, 8, 1, 0, 4, 6, 6, 7</p>
-                <p>80, 9, 700, 40, 1, 5, 200</p>
-                <p>15, 945, 44, 346, 122, 8724, 9238, 64, 12, 5, 32163, 455, 27, 234, 213</p>
+            @*<div class="col-md-12 mb-3">
+                <div class="form">
+                    <p class="BigFontSize mb-3">Набор данных:</p>
+                    <input type="text" name="numbers"/>
+                    <button onclick="bblSort($(`[name='numbers']`).val())">
+                        Сортировать
+                    </button>
+                </div>
+            </div>*@
+            <div class="col-md-12 pt-3">
+                <p class="mb-1">Исходный массив: <span id="InputArray"></span></p>
+                <p>Отсортированный массив: <span id="OutputArray"></span></p>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-dark m-1" onclick="window.AutoPlay = false; bblSort(generateData())">Сгенерировать массив</button>
+                    <button type="button" class="btn btn-dark m-1" onclick="window.AutoPlay = false; bblSort($('#InputArray').text())">Сбросить</button>
+                </div>
             </div>
             <div class="col-md-12">
-                <canvas id="myChart"></canvas>
+                <canvas id="myChart" style="min-height: 100px;"></canvas>
+                <div class="container">
+                    <div class="d-flex justify-content-around" style="display: none !important" id="buttons">
+                        <div class="col-md-3">
+                            <div class="form-group mb-0 pr-2 pl-2 text-center">
+                                <input type="number" class="form-control" id="speed" value="300" min="10">
+                                <small id="emailHelp" class="form-text text-muted">скорость</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="justify-content-around">
+                                <button type="button" class="btn btn-dark m-1" onclick="AutoStep($(`#speed`).val())"><i class="fas fa-play"></i></button>
+                                <button type="button" class="btn btn-dark m-1" onclick="window.AutoPlay = false"><i class="fas fa-pause"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="justify-content-around d-flex">
+                                <button type="button" class="btn btn-dark m-1" onclick="window.AutoPlay = false; NextStepIndex();">далее</button>
+                                <button type="button" class="btn btn-dark m-1" onclick="window.AutoPlay = false; PrevStepIndex();">назад</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
