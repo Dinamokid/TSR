@@ -1,4 +1,6 @@
-# dsgn plugin 
-for [gb-dsgn.ru](https://gb-dsgn.ru/)
+flask-boilerplate
+=================
 
-heroku deployment: [di-dsgn.herokuapp.com](https://di-dsgn.herokuapp.com/)
+Ready to use and deploy to Heroku!
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
